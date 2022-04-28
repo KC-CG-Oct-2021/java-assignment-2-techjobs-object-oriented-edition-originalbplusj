@@ -43,4 +43,47 @@ public class JobTest {
         assertFalse(newJob1 == newJob2);
 
     }
+    @Test
+    public void testToStringForBlankLines(){
+        Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("\n", newJob.toString());
+
+    }
+    @Test
+    public void testToStringForID(){
+        Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("\nID: 1", newJob.toString());
+    }
+    @Test
+    public void testToStringForName(){
+        Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("\nID: 1\nName: Product tester", newJob.toString());
+    }
+    @Test
+    public void testToStringForEmployer(){
+        Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("\nID: 1\nName: Product tester\nEmployer: ACME", newJob.toString());
+    }
+    @Test
+    public void testToStringForLocation(){
+        Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("\nID: 1\nName: Product tester\nEmployer: ACME\nLocation: Desert",  newJob.toString());
+    }
+    @Test
+    public void testToStringForPositionType(){
+        Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("\nID: 1\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control",  newJob.toString());
+    }
+    @Test
+    public void testToStringForCoreCompetency(){
+        Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("\nID: 1\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence",  newJob.toString());;
+    }
 }
