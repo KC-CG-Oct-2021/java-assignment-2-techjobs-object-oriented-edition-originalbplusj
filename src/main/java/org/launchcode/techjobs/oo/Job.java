@@ -1,8 +1,10 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class Job {
+
 
     private int id;
     private static int nextId = 1;
@@ -49,18 +51,24 @@ public class Job {
 
     @Override
     public String toString() {
+
+        String errorMessage = "Data not available";
+        if(getName().isEmpty()){
+            name = "Data not available";
+        }
         return "\n" +
                 "ID: " + id +
                 "\n" +
-                "Name: " + name +
+                "Name: " + name  +
                 "\n" +
-                "Employer: " + employer +
+                "Employer: " + employer  +
                 "\n" +
-                "Location: " + location +
+                "Location: " +  location  +
                 "\n" +
-                "Position Type: " + positionType +
+                "Position Type: " +  positionType  +
                 "\n" +
-                "Core Competency: " + coreCompetency;
+                "Core Competency: " +  coreCompetency  +
+                "\n";
     }
 
 
